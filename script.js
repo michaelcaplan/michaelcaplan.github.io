@@ -84,6 +84,8 @@ function Clock(countdown,callback) {
     // throttle so it's not constantly updating the time.
     if ( i++ % 10 ) { return; }
     
+    audio.play();
+    
     var t = updateFn(countdown);
     if ( t.Total < 0 ) {
       cancelAnimationFrame(timeinterval);
@@ -102,6 +104,7 @@ function Clock(countdown,callback) {
   setTimeout(updateClock,500);
 }
 
+const audio = document.querySelector('.audio');
 var deadline = new Date('2025-02-26 00:00:00');
 var c = new Clock(deadline, function(){ alert('countdown complete') });
 document.body.appendChild(c.el);
