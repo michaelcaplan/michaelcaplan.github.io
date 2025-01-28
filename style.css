@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
 html {
   height: 100%;
 }
@@ -7,8 +9,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #EEE;
-  background-image: url('https://cdn.glitch.global/c59846a5-5d4a-4345-a75d-1c3de16b3bcd/walnut.jpg?v=1738069087259');
+  background: #eee;
+  background-image: url("https://cdn.glitch.global/c59846a5-5d4a-4345-a75d-1c3de16b3bcd/walnut.jpg?v=1738069087259");
   background-repeat: repeat;
 }
 .flip-clock {
@@ -16,7 +18,7 @@ body {
   perspective: 400px;
   margin: 20px auto;
   padding: 10px;
-  background: #C0C0C0;
+  background: #c0c0c0;
   border-radius: 0.5em;
   border: 5px solid #222;
 }
@@ -55,7 +57,7 @@ body {
   transform: translateZ(0);
 }
 .card__bottom {
-  color: #FFF;
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 0;
@@ -87,17 +89,17 @@ body {
 }
 .flip .card__back::before {
   -webkit-animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
-          animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
+  animation: flipTop 0.3s cubic-bezier(0.37, 0.01, 0.94, 0.35);
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   transform-origin: center bottom;
 }
 .flip .card__back .card__bottom {
   transform-origin: center top;
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-fill-mode: both;
   -webkit-animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
-          animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
+  animation: flipBottom 0.6s cubic-bezier(0.15, 0.45, 0.28, 1);
 }
 @-webkit-keyframes flipTop {
   0% {
@@ -158,4 +160,8 @@ body {
     transform: rotateX(0deg);
     z-index: 5;
   }
+}
+
+form {
+  font-size: 2.5vw;
 }
