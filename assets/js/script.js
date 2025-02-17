@@ -109,7 +109,7 @@ function Clock(countdown, callback) {
   setTimeout(updateClock, 500);
 }
 
-const audio = document.querySelector(".audio");;
+const audio = document.querySelector(".audio");
 var c = new Clock(new Date("2025-02-26 00:00:00"), function () {
   alert("countdown complete");
 });
