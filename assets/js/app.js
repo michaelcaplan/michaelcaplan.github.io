@@ -265,7 +265,7 @@ export default {
             </v-container>
         </v-sheet>
         
-        <v-parallax src="/assets/images/skatehers.jpg"></v-parallax>
+        <v-parallax src="/assets/images/skatehers.webp"></v-parallax>
           
         <v-sheet
             id="organizations"
@@ -396,7 +396,7 @@ export default {
             </v-container>
         </v-sheet>
         
-        <v-parallax src="/assets/images/skateher2.jpg"></v-parallax>
+        <v-parallax src="/assets/images/skateher2.webp"></v-parallax>
           
         <v-sheet class="py-16" id="teams">
             <v-container>
@@ -429,7 +429,7 @@ export default {
             </v-container>
           </v-sheet>
          
-        <v-parallax src="/assets/images/skateher1.jpg"></v-parallax>
+        <v-parallax src="/assets/images/skateher1.webp"></v-parallax>
           
         <v-sheet class="py-16 text-center" id="donate">
             
