@@ -289,7 +289,7 @@ export default {
                             variant="outlined"
                         >
                             <v-card-text>
-                                <strong>YREACH</strong> provides settlement and languages support to Immigrant, Refugees, and their families who are new to our community.
+                                <strong>YREACH</strong> in Kentville provides settlement, employment and language support to Immigrants and Refugees and their families who are new to our community.
                             </v-card-text>
                             <v-card-actions>
                                 <v-btn
@@ -377,7 +377,7 @@ export default {
                             variant="outlined"
                         >
                             <v-card-text>
-                                <strong>Big Brothers Big Sisters of the Annapolis Valley</strong> provides life changing mentoring experiences for youth facing adversities.
+                                <strong>Big Brothers Big Sisters of the Annapolis Valley</strong> provides life changing mentoring experiences for young people facing adversities.
                             </v-card-text>
                             <v-card-actions>
                                 <v-btn
