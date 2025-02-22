@@ -7,6 +7,7 @@ const appwrite = new Client()
 export default {
     data() {
         return {
+            drawer: false,
             donors: [],
         }
     },
@@ -61,10 +62,10 @@ export default {
                     
                     <v-btn
                       class="text-body-1 blue-grey-darken-4"
-                      href="#teams"
+                      href="#village"
                       variant="text"
                     >
-                        Teams
+                        Village
                     </v-btn>
                     
                     <v-btn
@@ -76,7 +77,56 @@ export default {
                     </v-btn>
                 </div>
             </template>
+            
+            <template v-slot:append>
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            </template>
         </v-app-bar>
+        
+        <v-navigation-drawer
+            v-model="drawer"
+            location="right"
+            temporary
+        >
+            <v-list>
+                <v-list-item>
+                    <v-btn
+                      class="text-body-1 blue-grey-darken-4"
+                      href="#about"
+                      variant="text"
+                    >
+                        About
+                    </v-btn>
+                </v-list-item>        
+                <v-list-item>
+                    <v-btn
+                      class="text-body-1 blue-grey-darken-4"
+                      href="#organizations"
+                      variant="text"
+                    >
+                        Organizations
+                    </v-btn>
+                </v-list-item>        
+                <v-list-item>
+                    <v-btn
+                      class="text-body-1 blue-grey-darken-4"
+                      href="#village"
+                      variant="text"
+                    >
+                        Village
+                    </v-btn>
+                </v-list-item> 
+                <v-list-item>
+                    <v-btn
+                      class="text-body-1 blue-grey-darken-4"
+                      href="#donate"
+                      variant="text"
+                    >
+                        Donate
+                    </v-btn>
+                </v-list-item>       
+            </v-list>
+      </v-navigation-drawer>
           
         <v-sheet
             id="home"
@@ -227,7 +277,10 @@ export default {
                         </div>
                     
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
-                            Because that is what we love.  As skaters, we see skateboarding as a creative activity that teaches resiliency, pride in self, helps fight isolation and build community, while promoting stress busting exercise. Skateboarding can be an important anchor for youth who need a solid base to stand from as they tackle life’s challenges.  Skating is self directed creative physical play.
+                            Because that is what we love.  As skaters, we see skateboarding as a creative activity that teaches resiliency, pride in self, 
+                            helps fight isolation and build community, while promoting stress busting exercise. Skateboarding 
+                            can be an important anchor for youth who need a solid base to stand from as they tackle life’s challenges.  
+                            <strong>Skating is self-directed creative physical play.</strong>
 
                             You don’t have to be a skater to appreciate these values. 
                         </div>
@@ -254,10 +307,12 @@ export default {
 
                             <v-list>
                                 <v-list-item>⭐ 2 intro skateboarding lessons</v-list-item>
-                                <v-list-item>⭐ Free skateboard (this is the exclusive cost we are fundraising for - $100 for 1 skateboard provided by our pals at IGotSkate)</v-list-item>
+                                <v-list-item>⭐ Free skateboard.  This is the exclusive cost we are fundraising for - $100 for 1 skateboard provided by our pals at IGotSkate.</v-list-item>
                                 <v-list-item>⭐ Protective gear rental (free - thanks Town of Kentville!)</v-list-item>
                                 <v-list-item>⭐ An open invite to join us for our regular skate meetups!</v-list-item>
                             </v-list>
+                            
+                            Stretch goal is $10K so we can also include free pads to give to the 50 new skaters.
                            
                         </div>
                     </v-col>
@@ -398,7 +453,7 @@ export default {
         
         <v-parallax src="/assets/images/skateher2.webp"></v-parallax>
           
-        <v-sheet class="py-16" id="teams">
+        <v-sheet class="py-16" id="village">
             <v-container>
               <v-row>
                 <v-col cols="12" md="5">
@@ -409,7 +464,7 @@ export default {
                   md="7"
                 >
                   <div class="text-h4">
-                    Join a Fundraising Team
+                    It Takes A Village
                   </div>
         
                   <div class="text-body-1 text-medium-emphasis my-5">
