@@ -281,7 +281,7 @@ export default {
                         </div>
                     
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
-                            As a continuation this activity we are making big moves to <strong>support the important work of community 
+                            As a continuation of this activity we are making big moves to <strong>support the important work of community 
                             organizations</strong> who play a big role advocating for our local youth in need.
                         </div>
                     </v-col>
