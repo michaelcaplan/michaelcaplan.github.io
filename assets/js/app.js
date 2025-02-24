@@ -9,6 +9,9 @@ export default {
         return {
             drawer: false,
             dialShare: false,
+            igotskate: false,
+            caplan: false,
+            gob: false,
             donors: [],
         }
     },
@@ -233,7 +236,7 @@ export default {
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
                             <a href="https://www.instagram.com/ktown_skatehers/" target="_blank">KTown SkateHers+</a>, 
                             a project supported by <a href="https://kentville.ca/parks-and-recreation" target="_blank">Kentville Recreation</a>
-                            and <a href="https://igotskate.com/" target="_blank">IGotSkate</a>, 
+                            and <a href="https://igotskate.com/" target="_blank">iGot Skate</a>, 
                             are embarking on an ambitious initiative leading into the 2025 skateboarding season:  <br>
                             Get skateboarding into the hands of more <strong>youth facing adversities</strong>.
                         </div>
@@ -357,7 +360,7 @@ export default {
 
                             <v-list>
                                 <v-list-item>⭐ 2 intro skateboarding lessons</v-list-item>
-                                <v-list-item>⭐ Free skateboard.  This is the exclusive cost we are fundraising for - $100 for 1 skateboard provided by our pals at IGotSkate.</v-list-item>
+                                <v-list-item>⭐ Free skateboard.  This is the exclusive cost we are fundraising for - $100 for 1 skateboard provided by our pals at IGot Skate.</v-list-item>
                                 <v-list-item>⭐ Protective gear rental (free - thanks Town of Kentville!)</v-list-item>
                                 <v-list-item>⭐ An open invite to join us for our regular skate meetups!</v-list-item>
                             </v-list>
@@ -503,36 +506,187 @@ export default {
         
         <v-parallax src="/assets/images/skateher2.webp"></v-parallax>
           
-        <v-sheet class="py-16" id="village">
+        <v-sheet 
+            class="py-16 text-center" 
+            id="village"
+        >
+            
+            <div class="text-h4 font-weight-bold">
+                It Takes A Village
+            </div>
+        
             <v-container>
-              <v-row>
-                <v-col cols="12" md="5">
-                  <v-img src="/assets/discover_bg.png" /></v-col>
-        
-                <v-col
-                  cols="12"
-                  md="7"
-                >
-                  <div class="text-h4">
-                    It Takes A Village
-                  </div>
-        
-                  <div class="text-body-1 text-medium-emphasis my-5">
-                    Venis demo enim ipsam voluptatem quia voluptas sit aspernatur netsum
-                    lorem fugit, seditum netis velas matrix net nesciunt
-                  </div>
-        
-                  <v-btn
-                    color="primary"
-                    flat
-                    height="55"
-                    rounded
-                    text="Discover More"
-                  />
-                </v-col>
-              </v-row>
+                <v-row>            
+                    <v-col
+                        cols="12"
+                        md="6"
+                    >
+                        <div class="text-h5">
+                            Backing Teams
+                        </div>
+            
+                        <div class="text-subtitle-2 text-medium-emphasis my-5">
+                            Teams are core backers of 50/50.  Hitting our fundraising goal would not be possible without you.  
+                        </div>
+            
+                        <v-row>
+                            <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                                <v-card 
+                                    title="iGot Skate"
+                                    variant="outlined"
+                                >
+                                    <v-card-text>
+                                        <strong>iGot Skate</strong> is a skater and family owned skateboard shop located in Kentville, Nova Scotia, in the beautiful Annapolis Valley.
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-btn
+                                            variant="tonal"
+                                            @click="igotskate = true"
+                                            block
+                                        >
+                                            <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
+                                            More...
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                                
+                                <v-dialog
+                                    v-model="igotskate"
+                                    scrollable
+                                    transition="dialog-bottom-transition"
+                                    max-width="600px"
+                                    width="100%"
+                                >
+                                    <v-card
+                                        prepend-icon="mdi-skateboard"
+                                        title="Back 50/50 on Behalf of iGot Skate"
+                                    >
+                                        <v-card-text>
+                                        
+                                            <div class="text-center">
+                                                <v-img
+                                                    src="/assets/images/igotskate.jpg"
+                                                    aspect-ratio="1/1"
+                                                    max-width="300"
+                                                    position="50% 50%"
+                                                    rounded="sm"
+                                                ></v-img>
+                                            </div>
+                                        
+                                            
+                                        
+                                            <p>We are a skater owned, and family owned skateboard shop. A humble local shop, established in the Spring of 2019, located in Kentville, Nova Scotia, in the beautiful Annapolis Valley.</p>
+
+                                            <p>Our mission is not only to provide the latest gear in skateboarding, but to grow and unite a welcoming and diverse skateboarding community, of all ages. We strongly believe that a community that co-exists can make a positive impact, to inspire and make our world a better place.</p>
+
+                                            <p>iGot Skate is actively engaged with other local businesses in fundraising for non- profit charity programmes like, The Portal Youth and Our Local Food Bank. As well as, partnering with Annapolis Valley Regional Hospital Foundation, IWK Foundation, etc.,  benefiting our community and local charities.</p> 
+
+                                            <p>United, Not Divided, is what We promote at iGot Skate.</p> 
+                                        
+                                        </v-card-text>
+                                    
+                                        <template v-slot:actions>
+                                            <v-btn
+                                                variant="tonal"
+                                                flat
+                                                color="primary"
+                                                text="Let's Go!"
+                                                @click="igotskate = false"
+                                            ></v-btn>
+                                        </template>
+                                    </v-card>
+                                </v-dialog>
+                            </v-col>
+                            
+                            <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                                <v-card 
+                                    title="Girls on Boards"
+                                    variant="outlined"
+                                >
+                                    <v-card-text>
+                                        <strong>Girls on Boards</strong> creates empowering and accessible experiences through outdoor recreation and vulnerable conversations. 
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-btn
+                                            variant="tonal"
+                                            @click="gob = true"
+                                            block
+                                        >
+                                            <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
+                                            More...
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                                
+                                <v-dialog
+                                    v-model="gob"
+                                    scrollable
+                                    transition="dialog-bottom-transition"
+                                    max-width="600px"
+                                    width="100%"
+                                >
+                                    <v-card
+                                        prepend-icon="mdi-skateboard"
+                                        title="Back 50/50 on Behalf of Girls on Boards"
+                                    >
+                                        <v-card-text>
+                                        
+                                            <div class="text-center">
+                                                <v-img
+                                                    src="/assets/images/girlsonboards.png"
+                                                    aspect-ratio="1/1"
+                                                    max-width="300"
+                                                    position="50% 50%"
+                                                    rounded="sm"
+                                                ></v-img>
+                                            </div>
+                                        
+                                            <p>A registered non profit organization empowering girls and women to love their bodies, trust their core and feel their power using immersive recreation experiences and vulnerable conversations. Sponsored Stand Up Paddle Boarding, Skateboarding & Snowboarding Experiences female identifying youth ages 8-18. All of our youth events are funded by our "Pay-it-Forward" SUP Tours, Lessons and Rentals open to the public. Thanks for your support!</p>
+                                        
+                                        
+                                        </v-card-text>
+                                    
+                                        <template v-slot:actions>
+                                            <v-btn
+                                                variant="tonal"
+                                                flat
+                                                color="primary"
+                                                text="Let's Go!"
+                                                @click="gob = false"
+                                            ></v-btn>
+                                        </template>
+                                    </v-card>
+                                </v-dialog>
+                            </v-col>
+                            
+                        </v-row>
+                        
+                    </v-col>
+                    
+                    <v-col
+                        cols="12"
+                        md="6"
+                    >
+                        <div class="text-h5">
+                            Back Us?
+                        </div>
+            
+                        <div class="text-body-1 text-medium-emphasis my-5">
+                            Want to back us with your crew?  It's really straight forward.  Simply agree to promote the fundraiser via your network.  
+                        </div>
+            
+                        <v-btn
+                            color="primary"
+                            flat
+                            rounded
+                            text="Create A Team?"
+                            href="mailto:me@michaelcaplan.com?subject=I Want to Back 50/50&body=Hey, I'd like to connect about creating a team to back 50/50"
+                        />
+                    </v-col>
+                    
+                </v-row>
             </v-container>
-          </v-sheet>
+        </v-sheet>
          
         <v-parallax src="/assets/images/skateher1.webp"></v-parallax>
           
