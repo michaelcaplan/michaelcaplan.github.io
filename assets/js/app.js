@@ -10,8 +10,9 @@ export default {
             drawer: false,
             dialShare: false,
             igotskate: false,
-            caplan: false,
+            mike: false,
             gob: false,
+            tidal: false,
             donors: [],
         }
     },
@@ -81,6 +82,16 @@ export default {
         );
 
         this.donors = data.documents;
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.has('team')) {
+
+            let team = urlParams.get('team');
+
+            this[team] = true;
+
+        }
     },
 
     template: `
@@ -117,7 +128,7 @@ export default {
                       href="#village"
                       variant="text"
                     >
-                        Village
+                        The Village
                     </v-btn>
                     
                     <v-btn
@@ -126,6 +137,14 @@ export default {
                       variant="text"
                     >
                         Donate
+                    </v-btn>
+                    
+                    <v-btn
+                      class="text-body-1 blue-grey-darken-4"
+                      href="#questions"
+                      variant="text"
+                    >
+                        Questions?
                     </v-btn>
                 </div>
             </template>
@@ -165,7 +184,7 @@ export default {
                       href="#village"
                       variant="text"
                     >
-                        Village
+                        The Village
                     </v-btn>
                 </v-list-item> 
                 <v-list-item>
@@ -176,9 +195,18 @@ export default {
                     >
                         Donate
                     </v-btn>
+                </v-list-item>   
+                <v-list-item>
+                    <v-btn
+                      class="text-body-1 blue-grey-darken-4"
+                      href="#questions"
+                      variant="text"
+                    >
+                        Questions?
+                    </v-btn>
                 </v-list-item>       
             </v-list>
-      </v-navigation-drawer>
+        </v-navigation-drawer>
           
         <v-sheet
             id="home"
@@ -554,40 +582,62 @@ export default {
                                     v-model="igotskate"
                                     scrollable
                                     transition="dialog-bottom-transition"
-                                    max-width="600px"
+                                    fullscreen
                                     width="100%"
                                 >
-                                    <v-card
-                                        prepend-icon="mdi-skateboard"
-                                        title="Back 50/50 on Behalf of iGot Skate"
-                                    >
+                                    <v-card>
+                                        <v-toolbar>
+                                            <v-toolbar-title>iGot Skate</v-toolbar-title>
+                                
+                                            <v-spacer></v-spacer>
+                                
+                                            <v-toolbar-items>
+                                                <v-btn
+                                                    icon="mdi-close"
+                                                    @click="igotskate = false"
+                                              ></v-btn>
+                                            </v-toolbar-items>
+                                        </v-toolbar>
+                                    
                                         <v-card-text>
                                         
-                                            <div class="text-center">
-                                                <v-img
-                                                    src="/assets/images/igotskate.jpg"
-                                                    aspect-ratio="1/1"
-                                                    max-width="300"
-                                                    position="50% 50%"
-                                                    rounded="sm"
-                                                ></v-img>
+                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of iGot Skate</h3>
+                                        
+                                            <div class="d-flex justify-center pb-4">
+                                                    <v-img
+                                                        src="/assets/images/igotskate.jpg"
+                                                        aspect-ratio="1/1"
+                                                        max-width="300"
+                                                        position="50% 50%"
+                                                        rounded="lg"
+                                                    ></v-img>
                                             </div>
                                         
-                                            
+                                            <p class="text-body-1 pb-4">We are a skater owned, and family owned skateboard shop. A humble local shop, established in the Spring of 2019, located in Kentville, Nova Scotia, in the beautiful Annapolis Valley.</p>
+
+                                            <p class="text-body-1 pb-4">Our mission is not only to provide the latest gear in skateboarding, but to grow and unite a welcoming and diverse skateboarding community, of all ages. We strongly believe that a community that co-exists can make a positive impact, to inspire and make our world a better place.</p>
+
+                                            <p class="text-body-1 pb-4">iGot Skate is actively engaged with other local businesses in fundraising for non- profit charity programmes like, The Portal Youth and Our Local Food Bank. As well as, partnering with Annapolis Valley Regional Hospital Foundation, IWK Foundation, etc.,  benefiting our community and local charities.</p> 
+
+                                            <p class="text-body-1 pb-4">United, Not Divided, is what We promote at iGot Skate.</p> 
                                         
-                                            <p>We are a skater owned, and family owned skateboard shop. A humble local shop, established in the Spring of 2019, located in Kentville, Nova Scotia, in the beautiful Annapolis Valley.</p>
-
-                                            <p>Our mission is not only to provide the latest gear in skateboarding, but to grow and unite a welcoming and diverse skateboarding community, of all ages. We strongly believe that a community that co-exists can make a positive impact, to inspire and make our world a better place.</p>
-
-                                            <p>iGot Skate is actively engaged with other local businesses in fundraising for non- profit charity programmes like, The Portal Youth and Our Local Food Bank. As well as, partnering with Annapolis Valley Regional Hospital Foundation, IWK Foundation, etc.,  benefiting our community and local charities.</p> 
-
-                                            <p>United, Not Divided, is what We promote at iGot Skate.</p> 
+                                            <div class="d-flex justify-center pb-4">
+                                                <v-btn
+                                                    color="secondary"
+                                                    href="#home"
+                                                    @click="igotskate = false"
+                                                    size="x-large"
+                                                    rounded="xl"
+                                                    prepend-icon="mdi-skateboarding" 
+                                                >
+                                                    Learn about 50/50
+                                                </v-btn>
+                                            </div>
                                         
                                         </v-card-text>
                                     
                                         <template v-slot:actions>
                                             <v-btn
-                                                variant="tonal"
                                                 flat
                                                 color="primary"
                                                 text="Let's Go!"
@@ -622,33 +672,56 @@ export default {
                                     v-model="gob"
                                     scrollable
                                     transition="dialog-bottom-transition"
-                                    max-width="600px"
+                                    fullscreen
                                     width="100%"
                                 >
-                                    <v-card
-                                        prepend-icon="mdi-skateboard"
-                                        title="Back 50/50 on Behalf of Girls on Boards"
-                                    >
+                                    <v-card>
+                                        <v-toolbar>
+                                            <v-toolbar-title>Girls on Boards</v-toolbar-title>
+                                
+                                            <v-spacer></v-spacer>
+                                
+                                            <v-toolbar-items>
+                                                <v-btn
+                                                    icon="mdi-close"
+                                                    @click="gob = false"
+                                              ></v-btn>
+                                            </v-toolbar-items>
+                                        </v-toolbar>
+                                    
                                         <v-card-text>
                                         
-                                            <div class="text-center">
-                                                <v-img
-                                                    src="/assets/images/girlsonboards.png"
-                                                    aspect-ratio="1/1"
-                                                    max-width="300"
-                                                    position="50% 50%"
-                                                    rounded="sm"
-                                                ></v-img>
+                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Girls on Boards</h3>
+                                        
+                                            <div class="d-flex justify-center pb-4">
+                                                    <v-img
+                                                        src="/assets/images/girlsonboards.png"
+                                                        aspect-ratio="1/1"
+                                                        max-width="300"
+                                                        position="50% 50%"
+                                                        rounded="lg"
+                                                    ></v-img>
                                             </div>
                                         
-                                            <p>A registered non profit organization empowering girls and women to love their bodies, trust their core and feel their power using immersive recreation experiences and vulnerable conversations. Sponsored Stand Up Paddle Boarding, Skateboarding & Snowboarding Experiences female identifying youth ages 8-18. All of our youth events are funded by our "Pay-it-Forward" SUP Tours, Lessons and Rentals open to the public. Thanks for your support!</p>
-                                        
-                                        
+                                            <p class="text-body-1 pb-4">A registered non-profit organization empowering girls and women to love their bodies, trust their core and feel their power using immersive recreation experiences and vulnerable conversations. Sponsored Stand Up Paddle Boarding, Skateboarding & Snowboarding Experiences female identifying youth ages 8-18. All of our youth events are funded by our "Pay-it-Forward" SUP Tours, Lessons and Rentals open to the public. Thanks for your support!</p>
+                                            
+                                            <div class="d-flex justify-center pb-4">
+                                                <v-btn
+                                                    color="secondary"
+                                                    href="#home"
+                                                    @click="gob = false"
+                                                    size="x-large"
+                                                    rounded="xl"
+                                                    prepend-icon="mdi-skateboarding" 
+                                                >
+                                                    Learn about 50/50
+                                                </v-btn>
+                                            </div>
+                                            
                                         </v-card-text>
                                     
                                         <template v-slot:actions>
                                             <v-btn
-                                                variant="tonal"
                                                 flat
                                                 color="primary"
                                                 text="Let's Go!"
@@ -657,9 +730,167 @@ export default {
                                         </template>
                                     </v-card>
                                 </v-dialog>
+                                
                             </v-col>
                             
                         </v-row>
+                        
+                        <v-row>
+                            <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                                <v-card 
+                                    title="Caplan"
+                                    variant="outlined"
+                                >
+                                    <v-card-text>
+                                        <strong>Mike</strong> is old! 50 years and looking to turn each year into an opportunity on wheels for local youth.
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-btn
+                                            variant="tonal"
+                                            @click="mike = true"
+                                            block
+                                        >
+                                            <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
+                                            More...
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                                
+                                <v-dialog
+                                    v-model="mike"
+                                    scrollable
+                                    transition="dialog-bottom-transition"
+                                    fullscreen
+                                    width="100%"
+                                >
+                                    <v-card>
+                                        <v-toolbar>
+                                            <v-toolbar-title>Mike Caplan</v-toolbar-title>
+                                
+                                            <v-spacer></v-spacer>
+                                
+                                            <v-toolbar-items>
+                                                <v-btn
+                                                    icon="mdi-close"
+                                                    @click="mike = false"
+                                                ></v-btn>
+                                            </v-toolbar-items>
+                                        </v-toolbar>
+                                    
+                                        <v-card-text>
+
+                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Mike Caplan</h3>
+                                        
+                                            <div class="d-flex justify-center pb-4">
+                                                    <v-img
+                                                        src="/assets/images/mike.png"
+                                                        aspect-ratio="1/1"
+                                                        max-width="300"
+                                                        position="50% 50%"
+                                                        rounded="lg"
+                                                    ></v-img>
+                                            </div>
+                                        
+                                            <p class="text-body-1 pb-4">
+                                                Hey friends, family, neighbours, and colleagues!  
+                                                I'm hoping you'll join me on a little adventure for 2025 as I age into a new 5th decade.  
+                                                Help me turn each year into an opportunity on wheels for local youth.
+                                            </p>
+                                            
+                                            <div class="d-flex justify-center pb-4">
+                                                <v-btn
+                                                    color="secondary"
+                                                    href="#home"
+                                                    @click="mike = false"
+                                                    size="x-large"
+                                                    rounded="xl"
+                                                    prepend-icon="mdi-skateboarding" 
+                                                >
+                                                    Learn about 50/50
+                                                </v-btn>
+                                            </div>
+                                            
+                                        
+                                        </v-card-text>
+                                    
+                                        <template v-slot:actions>
+                                            <v-btn
+                                                flat
+                                                color="primary"
+                                                text="Let's Go!"
+                                                @click="mike = false"
+                                            ></v-btn>
+                                        </template>
+                                    </v-card>
+                                </v-dialog>
+                            </v-col>
+                            
+                        </v-row>
+                        
+                        <v-dialog
+                            v-model="tidal"
+                            scrollable
+                            transition="dialog-bottom-transition"
+                            fullscreen
+                            width="100%"
+                        >
+                            <v-card>
+                                <v-toolbar>
+                                    <v-toolbar-title>Tidal</v-toolbar-title>
+                        
+                                    <v-spacer></v-spacer>
+                        
+                                    <v-toolbar-items>
+                                        <v-btn
+                                            icon="mdi-close"
+                                            @click="tidal = false"
+                                      ></v-btn>
+                                    </v-toolbar-items>
+                                </v-toolbar>
+                            
+                                <v-card-text>
+                                
+                                    <h3 class="pb-4">Team Tidal-naughts! Tidal-ists, Tidal Bores...</h3>
+                                
+                                    <div class="d-flex justify-center pb-4">
+                                            <v-img
+                                                src="/assets/images/tidal.jpg"
+                                                aspect-ratio="1/1"
+                                                max-width="300"
+                                                position="50% 50%"
+                                                rounded="lg"
+                                            ></v-img>
+                                    </div>
+                                
+                                    <p class="text-body-1 pb-4">
+                                        ⚡️ Wolfville’s destination for community-based strength training 
+                                    </p>
+                                    
+                                    <div class="d-flex justify-center pb-4">
+                                        <v-btn
+                                            color="secondary"
+                                            href="#home"
+                                            @click="gob = false"
+                                            size="x-large"
+                                            rounded="xl"
+                                            prepend-icon="mdi-skateboarding" 
+                                        >
+                                            Learn about 50/50
+                                        </v-btn>
+                                    </div>
+                                    
+                                </v-card-text>
+                            
+                                <template v-slot:actions>
+                                    <v-btn
+                                        flat
+                                        color="primary"
+                                        text="Let's Go!"
+                                        @click="gob = false"
+                                    ></v-btn>
+                                </template>
+                            </v-card>
+                        </v-dialog>
                         
                     </v-col>
                     
@@ -672,7 +903,7 @@ export default {
                         </div>
             
                         <div class="text-body-1 text-medium-emphasis my-5">
-                            Want to back us with your crew?  It's really straight forward.  Simply agree to promote the fundraiser via your network.  
+                            Want to back us with your crew?  It's really straight forward.  Simply agree to promote the fundraiser via your network and we'll pop you on the above list.  
                         </div>
             
                         <v-btn
@@ -730,6 +961,22 @@ export default {
             </v-container>
         
         </v-sheet>
+        
+        <v-sheet
+            id="questions"
+            class="d-flex justify-center align-center text-center flex-column pa-4"
+            color="primary"
+        >
+            <h4 class="text-h4">
+                Questions?
+            </h4>
+                
+            <div class="text-subtitle-1 ma-5 text-lg-h6 text-md-h6 text-xl-h6" style="max-width: 468px;">
+                📧 Email <a href="mailto:me@michaelcaplan.com">me@michaelcaplan.com</a> or ☎️ phone <a href="tel:+19027600168">(902) 760-0168</a>
+            </div>
+       
+        </v-sheet>
+        
     </v-main>
       
     <v-bottom-navigation density="compact">
