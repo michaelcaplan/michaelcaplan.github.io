@@ -13,6 +13,7 @@ export default {
             caplan: false,
             girlsonboards: false,
             tidal: false,
+            kane: false,
             donors: [],
         }
     },
@@ -1007,6 +1008,103 @@ export default {
                                 </v-dialog>
                             </v-col>
                             
+                            <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                                <v-card
+                                    variant="outlined"
+                                >
+                                    <v-card-title>
+                                        Kane Smith @ Exit Realty
+                                        <v-btn 
+                                            href="https://www.kaneisthekey.ca/"
+                                            target="_blank"
+                                            icon="mdi-open-in-new"
+                                            size="small"
+                                            density="comfortable"></v-btn>
+                                    </v-card-title>
+                                
+                                    <v-card-text>
+                                        Real estate by day, <strong>Kane Smith</strong> sharing his childhood love of skating by throwing in with 50/50.
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-btn
+                                            variant="tonal"
+                                            @click="kane = true"
+                                            block
+                                        >
+                                            <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
+                                            More...
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                                
+                                <v-dialog
+                                    v-model="kane"
+                                    scrollable
+                                    transition="dialog-bottom-transition"
+                                    fullscreen
+                                    width="100%"
+                                >
+                                    <v-card>
+                                        <v-toolbar>
+                                            <v-toolbar-title>Kane Smith - Exit Realty</v-toolbar-title>
+                                
+                                            <v-spacer></v-spacer>
+                                
+                                            <v-toolbar-items>
+                                                <v-btn
+                                                    icon="mdi-close"
+                                                    @click="kane = false"
+                                                ></v-btn>
+                                            </v-toolbar-items>
+                                        </v-toolbar>
+                                    
+                                        <v-card-text>
+
+                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Kane Smith @ Exit Realty</h3>
+                                        
+                                            <div class="d-flex justify-center pb-4">
+                                                    <v-img
+                                                        src="/assets/images/exit.png"
+                                                        aspect-ratio="1/1"
+                                                        max-width="300"
+                                                        position="50% 50%"
+                                                        rounded="lg"
+                                                    ></v-img>
+                                            </div>
+                                        
+                                            <p class="text-body-1 pb-4">
+                                                Hey friends, family, neighbours, and colleagues!  
+                                                I'm hoping you'll join me in supporting local youth facing adversity by pitching in for this initiative.
+                                            </p>
+                                            
+                                            <div class="d-flex justify-center pb-4">
+                                                <v-btn
+                                                    color="secondary"
+                                                    href="#home"
+                                                    @click="kane = false"
+                                                    size="x-large"
+                                                    rounded="xl"
+                                                    prepend-icon="mdi-skateboarding" 
+                                                >
+                                                    Learn about 50/50
+                                                </v-btn>
+                                            </div>
+                                            
+                                        
+                                        </v-card-text>
+                                    
+                                        <template v-slot:actions>
+                                            <v-btn
+                                                flat
+                                                color="primary"
+                                                text="Let's Go!"
+                                                @click="caplan = false"
+                                            ></v-btn>
+                                        </template>
+                                    </v-card>
+                                </v-dialog>
+                            </v-col>
+                            
                         </v-row>
                         
                         <v-dialog
@@ -1032,20 +1130,25 @@ export default {
                             
                                 <v-card-text>
                                 
-                                    <h3 class="pb-4">Team Tidal-naughts! Tidal-ists, Tidal Bores...</h3>
-                                
+                                    <h3 class="pb-4">Team Tidal-ers! Tidal-naughts, Tidal-ists, Tidal Bores...</h3>
+                                    
                                     <div class="d-flex justify-center pb-4">
-                                            <v-img
-                                                src="/assets/images/tidal.jpg"
-                                                aspect-ratio="1/1"
-                                                max-width="300"
-                                                position="50% 50%"
-                                                rounded="lg"
-                                            ></v-img>
+                                        <iframe
+                                            class="youtube" 
+                                            src="https://www.youtube.com/embed/F_pjyj9RD7k?si=OO1mIGWWC9KtQjcR"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin" 
+                                            allowfullscreen
+                                        ></iframe>
                                     </div>
                                 
                                     <p class="text-body-1 pb-4">
-                                        ⚡️ Wolfville’s destination for community-based strength training 
+                                        Sorry for the awkward video pitch my fellow Tidalers.  
+                                        We all can't be as charming on camera as Brendan.
+                                        I'm hoping you'll join me on this adventure, and become an honorary skater.
+                                        50 deserving youth needing a push in the right direction, one skateboard at a time.
+                                        Can you help me get there?
                                     </p>
                                     
                                     <div class="d-flex justify-center pb-4">
@@ -1263,6 +1366,28 @@ export default {
                                 href="https://www.instagram.com/ktown_skatehers"
                                 target="_blank">
                                 SkateHers+
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/exit.png"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://www.kaneisthekey.ca"
+                                target="_blank">
+                                Kane Smith - Exit Realty
                                 <v-icon>mdi-open-in-new</v-icon>
                             </a>
                         </div>
