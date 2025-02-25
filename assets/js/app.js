@@ -767,7 +767,7 @@ export default {
                                     
                                         <v-card-text>
                                         
-                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of iGot Skate</h3>
+                                            <h3 class="pb-4">Back "50/50: Skateboarding For The Youth" on behalf of iGot Skate</h3>
                                         
                                             <div class="d-flex justify-center pb-4">
                                                     <v-img
@@ -865,7 +865,7 @@ export default {
                                     
                                         <v-card-text>
                                         
-                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Girls on Boards</h3>
+                                            <h3 class="pb-4">Back "50/50: Skateboarding For The Youth" on behalf of Girls on Boards</h3>
                                         
                                             <div class="d-flex justify-center pb-4">
                                                     <v-img
@@ -962,7 +962,7 @@ export default {
                                     
                                         <v-card-text>
 
-                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Mike Caplan</h3>
+                                            <h3 class="pb-4">Back "50/50: Skateboarding For The Youth" on behalf of Mike Caplan</h3>
                                         
                                             <div class="d-flex justify-center pb-4">
                                                 <iframe
@@ -1061,7 +1061,7 @@ export default {
                                     
                                         <v-card-text>
 
-                                            <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Kane Smith @ Exit Realty</h3>
+                                            <h3 class="pb-4">Back "50/50: Skateboarding For The Youth" on behalf of Kane Smith @ Exit Realty</h3>
                                         
                                             <div class="d-flex justify-center pb-4">
                                                     <v-img
