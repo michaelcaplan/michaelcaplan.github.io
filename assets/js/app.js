@@ -10,8 +10,8 @@ export default {
             drawer: false,
             dialShare: false,
             igotskate: false,
-            mike: false,
-            gob: false,
+            caplan: false,
+            girlsonboards: false,
             tidal: false,
             donors: [],
         }
@@ -62,7 +62,46 @@ export default {
             }
 
             return '$' + goal;
-        }
+        },
+
+        displayDonors() {
+            let people = [];
+
+            for (let i = 0; i < this.donors.length; i++) {
+                if (this.donors[i].display === true || this.donors[i].display === null) {
+
+                    people.push(this.donors[i]);
+                }
+            }
+
+            return people;
+        },
+
+        displayDonorsColTwo() {
+            let people = this.displayDonors;
+            let col = [];
+
+            for (let i = 0; i < people.length; i++) {
+                if (i % 2 == 0) {
+                    col.push(people[i]);
+                }
+            }
+
+            return col;
+        },
+
+        displayDonorsColOne() {
+            let people = this.displayDonors;
+            let col = [];
+
+            for (let i = 0; i < people.length; i++) {
+                if (Math.abs(i % 2) == 1) {
+                    col.push(people[i]);
+                }
+            }
+
+            return col;
+        },
     },
 
     async created() {
@@ -221,7 +260,15 @@ export default {
                 width="100%" />
         
             <h1 class="text-h4 text-sm-h2 text-md-h2 text-lg-h2 text-xl-h2">
-                <span class="text-h6 text-sm-h4 text-md-h4 text-lg-h4 text-xl-h4">50/50</span><br>
+                <abbr class="text-h6 text-sm-h4 text-md-h4 text-lg-h4 text-xl-h4">
+                    50/50
+                    <v-tooltip
+                        activator="parent"
+                        location="top"
+                    >50/50 as in 50 skateboards, for 50 youth.  And 50/50, the name of a skateboarding trick.</v-tooltip>
+                    
+                </abbr>
+                <br>
                 Skateboarding For The Youth
             </h1>
         
@@ -239,9 +286,16 @@ export default {
             </div>
         </v-sheet>
           
-        <v-sheet id="about" class="py-16 text-center">
-            <div class="text-h4 font-weight-bold">
-                About 50/50
+        <v-sheet id="about" class="py-16">
+            <div class="text-h4 font-weight-bold text-center">
+                About 
+                <abbr>
+                    50/50
+                    <v-tooltip
+                        activator="parent"
+                        location="top"
+                    >50/50 as in 50 skateboards, for 50 youth.  And 50/50, the name of a skateboarding trick.</v-tooltip>
+                </abbr>
             </div>
             
             <v-container>
@@ -409,7 +463,14 @@ export default {
             color="secondary"
         >
             <div class="text-h4 font-weight-bold">
-                Organizations We Are Supporting with 50/50
+                Organizations We Are Supporting with 
+                <abbr>
+                    50/50
+                    <v-tooltip
+                        activator="parent"
+                        location="top"
+                    >50/50 as in 50 skateboards, for 50 youth.  And 50/50, the name of a skateboarding trick.</v-tooltip>
+                </abbr>
             </div>
         
             <div class="text-body-1 font-weight-regular ma-3 text-medium-emphasis mb-12">
@@ -535,34 +596,138 @@ export default {
         <v-parallax src="/assets/images/skateher2.webp"></v-parallax>
           
         <v-sheet 
-            class="py-16 text-center" 
+            class="py-16" 
             id="village"
         >
             
-            <div class="text-h4 font-weight-bold">
+            <div class="text-center text-h4 font-weight-bold pb-8">
                 It Takes A Village
             </div>
+        
+            <v-container v-if="displayDonors.length > 0">
+                <v-row>  
+                    <v-col>
+                        <div class="text-h5 text-center pb-4">
+                            Villagers Who Stepped on Up, Thank you!
+                        </div>
+                        
+                        <v-row>
+                            <v-col
+                                cols="12"
+                                sm="6"
+                            >
+                                <v-list lines="one">
+                                    <v-list-item
+                                        v-for="donor in displayDonorsColOne"
+                                        :key="donor.$id"
+                                    >
+                                        <template v-slot:prepend>
+                                            <v-avatar
+                                                color="primary"
+                                                icon="mdi-skateboarding"
+                                            >
+                                          </v-avatar>
+                                        </template>
+                                    
+                                        <v-list-item-title>
+                                            {{ donor.name }}
+                                            <v-chip 
+                                                v-if="donor.team"
+                                                variant="elevated"
+                                                color="secondary"
+                                                size="x-small"
+                                                @click="this[donor.team] = true"
+                                            >
+                                                {{ donor.team }}
+                                            </v-chip>
+                                        </v-list-item-title>
+                                        <v-list-item-subtitle v-if="donor.business">
+                                            {{ donor.business }}
+                                        </v-list-item-subtitle>
+                                        
+                                    </v-list-item>
+                                </v-list>
+                                
+                            </v-col>
+                            
+                            <v-col
+                                cols="12"
+                                sm="6"
+                                v-if="displayDonorsColTwo.length > 0"
+                            >
+                                <v-list lines="one">
+                                    <v-list-item
+                                        v-for="donor in displayDonorsColTwo"
+                                        :key="donor.$id"
+                                    >
+                                        <template v-slot:prepend>
+                                            <v-avatar
+                                                color="primary"
+                                                icon="mdi-skateboarding"
+                                            >
+                                          </v-avatar>
+                                        </template>
+                                    
+                                        <v-list-item-title>
+                                            {{ donor.name }}
+                                            <v-chip 
+                                                v-if="donor.team"
+                                                variant="elevated"
+                                                color="secondary"
+                                                size="x-small"
+                                                @click="this[donor.team] = true"
+                                            >
+                                                {{ donor.team }}
+                                            </v-chip>
+                                        </v-list-item-title>
+                                        <v-list-item-subtitle v-if="donor.business">
+                                            {{ donor.business }}
+                                        </v-list-item-subtitle>
+                                        
+                                    </v-list-item>
+                                </v-list>
+                                
+                            </v-col>
+                        </v-row>
+                        
+                    </v-col>
+
+                </v-row>
+                
+                <v-divider 
+                    v-if="displayDonors.length > 0"
+                    class="mb-3 mt-4">
+                </v-divider>  
+            </v-container>       
         
             <v-container>
                 <v-row>            
                     <v-col
                         cols="12"
-                        md="6"
+                        class="mb-4"
                     >
-                        <div class="text-h5">
+                        <div class="text-h5 text-center">
                             Backing Teams
                         </div>
             
-                        <div class="text-subtitle-2 text-medium-emphasis my-5">
-                            Teams are core backers of 50/50.  Hitting our fundraising goal would not be possible without you.  
+                        <div class="text-subtitle-2 text-medium-emphasis my-5 text-center">
+                            Teams are core movers and shakers of 50/50.  Hitting our fundraising goal would not be possible without you.  
                         </div>
             
                         <v-row>
                             <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-                                <v-card 
-                                    title="iGot Skate"
+                                <v-card
                                     variant="outlined"
                                 >
+                                    <v-card-title>
+                                        iGot Skate                                   
+                                        <v-btn 
+                                            href="https://igotskate.com/"
+                                            target="_blank"
+                                            icon="mdi-open-in-new"
+                                            size="small"
+                                            density="comfortable"></v-btn>
+                                    </v-card-title>
                                     <v-card-text>
                                         <strong>iGot Skate</strong> is a skater and family owned skateboard shop located in Kentville, Nova Scotia, in the beautiful Annapolis Valley.
                                     </v-card-text>
@@ -649,17 +814,25 @@ export default {
                             </v-col>
                             
                             <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-                                <v-card 
-                                    title="Girls on Boards"
+                                <v-card
                                     variant="outlined"
                                 >
+                                    <v-card-title>
+                                        Girls on Boards
+                                        <v-btn 
+                                            href="https://www.girlsonboards.co/"
+                                            target="_blank"
+                                            icon="mdi-open-in-new"
+                                            size="small"
+                                            density="comfortable"></v-btn>
+                                    </v-card-title>
                                     <v-card-text>
                                         <strong>Girls on Boards</strong> creates empowering and accessible experiences through outdoor recreation and vulnerable conversations. 
                                     </v-card-text>
                                     <v-card-actions>
                                         <v-btn
                                             variant="tonal"
-                                            @click="gob = true"
+                                            @click="girlsonboards = true"
                                             block
                                         >
                                             <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
@@ -669,7 +842,7 @@ export default {
                                 </v-card>
                                 
                                 <v-dialog
-                                    v-model="gob"
+                                    v-model="girlsonboards"
                                     scrollable
                                     transition="dialog-bottom-transition"
                                     fullscreen
@@ -684,7 +857,7 @@ export default {
                                             <v-toolbar-items>
                                                 <v-btn
                                                     icon="mdi-close"
-                                                    @click="gob = false"
+                                                    @click="girlsonboards = false"
                                               ></v-btn>
                                             </v-toolbar-items>
                                         </v-toolbar>
@@ -709,7 +882,7 @@ export default {
                                                 <v-btn
                                                     color="secondary"
                                                     href="#home"
-                                                    @click="gob = false"
+                                                    @click="girlsonboards = false"
                                                     size="x-large"
                                                     rounded="xl"
                                                     prepend-icon="mdi-skateboarding" 
@@ -725,7 +898,7 @@ export default {
                                                 flat
                                                 color="primary"
                                                 text="Let's Go!"
-                                                @click="gob = false"
+                                                @click="girlsonboards = false"
                                             ></v-btn>
                                         </template>
                                     </v-card>
@@ -737,17 +910,26 @@ export default {
                         
                         <v-row>
                             <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-                                <v-card 
-                                    title="Caplan"
+                                <v-card
                                     variant="outlined"
                                 >
+                                    <v-card-title>
+                                        Caplan                                   
+                                        <v-btn 
+                                            href="https://michaelcaplan.com/"
+                                            target="_blank"
+                                            icon="mdi-open-in-new"
+                                            size="small"
+                                            density="comfortable"></v-btn>
+                                    </v-card-title>
+                                
                                     <v-card-text>
                                         <strong>Mike</strong> is old! 50 years and looking to turn each year into an opportunity on wheels for local youth.
                                     </v-card-text>
                                     <v-card-actions>
                                         <v-btn
                                             variant="tonal"
-                                            @click="mike = true"
+                                            @click="caplan = true"
                                             block
                                         >
                                             <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
@@ -757,7 +939,7 @@ export default {
                                 </v-card>
                                 
                                 <v-dialog
-                                    v-model="mike"
+                                    v-model="caplan"
                                     scrollable
                                     transition="dialog-bottom-transition"
                                     fullscreen
@@ -772,7 +954,7 @@ export default {
                                             <v-toolbar-items>
                                                 <v-btn
                                                     icon="mdi-close"
-                                                    @click="mike = false"
+                                                    @click="caplan = false"
                                                 ></v-btn>
                                             </v-toolbar-items>
                                         </v-toolbar>
@@ -801,7 +983,7 @@ export default {
                                                 <v-btn
                                                     color="secondary"
                                                     href="#home"
-                                                    @click="mike = false"
+                                                    @click="caplan = false"
                                                     size="x-large"
                                                     rounded="xl"
                                                     prepend-icon="mdi-skateboarding" 
@@ -818,7 +1000,7 @@ export default {
                                                 flat
                                                 color="primary"
                                                 text="Let's Go!"
-                                                @click="mike = false"
+                                                @click="caplan = false"
                                             ></v-btn>
                                         </template>
                                     </v-card>
@@ -870,7 +1052,7 @@ export default {
                                         <v-btn
                                             color="secondary"
                                             href="#home"
-                                            @click="gob = false"
+                                            @click="tidal = false"
                                             size="x-large"
                                             rounded="xl"
                                             prepend-icon="mdi-skateboarding" 
@@ -886,7 +1068,7 @@ export default {
                                         flat
                                         color="primary"
                                         text="Let's Go!"
-                                        @click="gob = false"
+                                        @click="tidal = false"
                                     ></v-btn>
                                 </template>
                             </v-card>
@@ -894,9 +1076,11 @@ export default {
                         
                     </v-col>
                     
+                    <v-divider class="mt-4 mb-3"></v-divider>
+                    
                     <v-col
                         cols="12"
-                        md="6"
+                        class="text-center"
                     >
                         <div class="text-h5">
                             Back Us?
@@ -964,17 +1148,138 @@ export default {
         
         <v-sheet
             id="questions"
-            class="d-flex justify-center align-center text-center flex-column pa-4"
+            class="py-16 text-center"
             color="primary"
         >
-            <h4 class="text-h4">
-                Questions?
+            <h4 class="text-h4 mb-4">
+                Thanks For All The Support:
             </h4>
+        
+            <v-continer>
                 
-            <div class="text-subtitle-1 ma-5 text-lg-h6 text-md-h6 text-xl-h6" style="max-width: 468px;">
-                📧 Email <a href="mailto:me@michaelcaplan.com">me@michaelcaplan.com</a> or ☎️ phone <a href="tel:+19027600168">(902) 760-0168</a>
-            </div>
-       
+                <v-row>
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/kentville.png"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://kentville.ca/parks-and-recreation"
+                                target="_blank">
+                                Parks and Recreation Kentville
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/girlsonboards.png"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://www.girlsonboards.co/"
+                                target="_blank">
+                                Girls on Boards
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/tidal.jpg"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://www.tidaltrainingclub.com/"
+                                target="_blank">
+                                Tidal Training Club
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/igotskate.jpg"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://igotskate.com/"
+                                target="_blank">
+                                iGot Skate
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/skatehers.png"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://www.instagram.com/ktown_skatehers"
+                                target="_blank">
+                                SkateHers+
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                </v-row>
+                
+                <v-divider class="mt-4 mb-3"></v-divider>
+            
+                <h4 class="text-h4 mt-4 mb-3">
+                    Questions?
+                </h4>
+                    
+                <div class="text-subtitle-1 ma-5 text-lg-h6 text-md-h6 text-xl-h6">
+                    📧 Email <a href="mailto:me@michaelcaplan.com">me@michaelcaplan.com</a> or ☎️ phone <a href="tel:+19027600168">(902) 760-0168</a>
+                </div>
+            </v-continer>
         </v-sheet>
         
     </v-main>
