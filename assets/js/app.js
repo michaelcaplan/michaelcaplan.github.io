@@ -965,13 +965,14 @@ export default {
                                             <h3 class="pb-4">Back 50/50: Skateboarding For The Youth on behalf of Mike Caplan</h3>
                                         
                                             <div class="d-flex justify-center pb-4">
-                                                    <v-img
-                                                        src="/assets/images/mike.png"
-                                                        aspect-ratio="1/1"
-                                                        max-width="300"
-                                                        position="50% 50%"
-                                                        rounded="lg"
-                                                    ></v-img>
+                                                <iframe
+                                                    class="youtube" 
+                                                    src="https://www.youtube.com/embed/lCqwieiGSng?si=Mh-GBFdDR2_rDePY"
+                                                    frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                    referrerpolicy="strict-origin-when-cross-origin" 
+                                                    allowfullscreen
+                                                ></iframe>
                                             </div>
                                         
                                             <p class="text-body-1 pb-4">
