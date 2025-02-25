@@ -13,7 +13,7 @@ export default {
             caplan: false,
             girlsonboards: false,
             tidal: false,
-            kane: false,
+            kaneisthekey: false,
             donors: [],
         }
     },
@@ -1028,7 +1028,7 @@ export default {
                                     <v-card-actions>
                                         <v-btn
                                             variant="tonal"
-                                            @click="kane = true"
+                                            @click="kaneisthekey = true"
                                             block
                                         >
                                             <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
@@ -1038,7 +1038,7 @@ export default {
                                 </v-card>
                                 
                                 <v-dialog
-                                    v-model="kane"
+                                    v-model="kaneisthekey"
                                     scrollable
                                     transition="dialog-bottom-transition"
                                     fullscreen
@@ -1053,7 +1053,7 @@ export default {
                                             <v-toolbar-items>
                                                 <v-btn
                                                     icon="mdi-close"
-                                                    @click="kane = false"
+                                                    @click="kaneisthekey = false"
                                                 ></v-btn>
                                             </v-toolbar-items>
                                         </v-toolbar>
@@ -1081,7 +1081,7 @@ export default {
                                                 <v-btn
                                                     color="secondary"
                                                     href="#home"
-                                                    @click="kane = false"
+                                                    @click="kaneisthekey = false"
                                                     size="x-large"
                                                     rounded="xl"
                                                     prepend-icon="mdi-skateboarding" 
