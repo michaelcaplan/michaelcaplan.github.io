@@ -318,7 +318,7 @@ export default {
                     
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
                             <a href="https://www.instagram.com/ktown_skatehers/" target="_blank">KTown SkateHers+</a>, 
-                            a project supported by <a href="https://kentville.ca/parks-and-recreation" target="_blank">Kentville Recreation</a>
+                            a project supported by the <a href="https://kentville.ca/" target="_blank">Town of Kentville</a>
                             and <a href="https://igotskate.com/" target="_blank">iGot Skate</a>, 
                             are embarking on an ambitious initiative leading into the 2025 skateboarding season:  <br>
                             Get skateboarding into the hands of more <strong>youth facing adversities</strong>.
@@ -1265,7 +1265,7 @@ export default {
                         
                         <div class="d-flex justify-center pb-4">
                             <v-img
-                                src="/assets/images/kentville.png"
+                                src="/assets/images/kentville.jpg"
                                 aspect-ratio="1/1"
                                 max-width="300"
                                 rounded="lg"
@@ -1275,9 +1275,9 @@ export default {
                         <div class="text-subtitle-1">
                             <a 
                                 class="text-h6"
-                                href="https://kentville.ca/parks-and-recreation"
+                                href="https://kentville.ca/"
                                 target="_blank">
-                                Parks and Recreation Kentville
+                                Town of Kentville
                                 <v-icon>mdi-open-in-new</v-icon>
                             </a>
                         </div>
