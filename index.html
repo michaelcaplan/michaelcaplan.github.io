@@ -1,72 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://cdn.glitch.global/c59846a5-5d4a-4345-a75d-1c3de16b3bcd/favicon.ico?v=1738104758888" />
+<!doctype html>
+<html class="no-js" lang="">
 
-    <title>50 - 50</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>50/50: Skateboarding for the Youth</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@v3.7.11/dist/vuetify.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style2.css">
+  <meta name="description" content="Our goal is simple: offer free skateboarding programming to youth facing adversities in our community.">
 
-    <meta name="description" content="I'll be launching a project on Feb. 26.  Keep your 👀 here">
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://50.michaelcaplan.com">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="50 - 50">
-    <meta property="og:description" content="I'll be launching a project on Feb. 26.  Keep your 👀 here">
-    <meta property="og:image" content="/assets/images/50.png?4">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://50.michaelcaplan.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="50/50: Skateboarding for the Youth">
+  <meta property="og:description" content="Our goal is simple: offer free skateboarding programming to youth facing adversities in our community.">
+  <meta property="og:image" content="assets/images/50-skateboard.png">
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="50.michaelcaplan.com">
-    <meta property="twitter:url" content="https://50.michaelcaplan.com">
-    <meta name="twitter:title" content="50 - 50">
-    <meta name="twitter:description" content="I'll be launching a project on Feb. 26.  Keep your 👀 here">
-    <meta name="twitter:image" content="/assets/images/50.png?4">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="50.michaelcaplan.com">
+  <meta property="twitter:url" content="https://50.michaelcaplan.com">
+  <meta name="twitter:title" content="50/50: Skateboarding for the Youth">
+  <meta name="twitter:description" content="Our goal is simple: offer free skateboarding programming to youth facing adversities in our community.">
+  <meta name="twitter:image" content="assets/images/50-skateboard.png">
 
-    
-    <!-- The website stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
 
-    <!-- The website JavaScript file -->
-    <script src="assets/js/script.js" defer></script>
-  </head>
-  <body>
-    <div id="clock">
-      <audio
-        src="https://cdn.glitch.global/c59846a5-5d4a-4345-a75d-1c3de16b3bcd/clock.mp3?v=1738073604446"
-        class="audio"
-      ></audio>
-    </div>
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#6f42c1">
 
-    <form
-      action="https://community.us13.list-manage.com/subscribe/post?u=297c1f5bb9036f67b81949de5&amp;id=43eb4cc777&amp;f_id=00a13de3f0"
-      method="post"
-    >
-      <div>
-        <input
-          type="email"
-          name="EMAIL"
-          required=""
-          value=""
-          placeholder="Your Email"
-        />
-      </div>
-      <div>
-        <input type="text" name="FNAME" value="" placeholder="Your Name" />
-      </div>
-      <input type="hidden" name="tags" value="885487" />
-      <div aria-hidden="true" style="position: absolute; left: -5000px">
-        /* real people should not fill this in and expect good things - do not
-        remove this or risk form bot signups */
-        <input
-          type="text"
-          name="b_297c1f5bb9036f67b81949de5_43eb4cc777"
-          tabindex="-1"
-          value=""
-        />
-      </div>
-      <button type="submit">Get On The List</button>
-    </form>
-  </body>
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.esm-browser.js",
+        "vuetify": "https://cdn.jsdelivr.net/npm/vuetify@v3.7.11/dist/vuetify.esm.js",
+        "appwrite": "https://cdn.jsdelivr.net/npm/appwrite@17.0.0/+esm"
+      }
+    }
+  </script>
+
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+
+<body>
+
+  <div id="app"></div>
+
+  <script type="module" src="assets/js/main.js"></script>
+
+</body>
+
 </html>
