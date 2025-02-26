@@ -78,6 +78,19 @@ export default {
             return people;
         },
 
+        secretDonorsCount() {
+            let count = 0;
+
+            for (let i = 0; i < this.donors.length; i++) {
+                if (this.donors[i].display !== true && this.donors[i].display !== null) {
+
+                    count++;
+                }
+            }
+
+            return count;
+        },
+
         displayDonorsColTwo() {
             let people = this.displayDonors;
             let col = [];
@@ -103,6 +116,10 @@ export default {
 
             return col;
         },
+    },
+
+    beforeCreate() {
+        document.getElementById('warning').remove();
     },
 
     async created() {
@@ -691,6 +708,12 @@ export default {
                             </v-col>
                         </v-row>
                         
+                        <v-row v-if="secretDonorsCount > 0">
+                            <v-col cols="12" class="text-center pb-4">
+                                And {{ secretDonorsCount }} secret donors.  Shhh!!!!!                            
+                            </v-col>                        
+                        </v-row>
+                        
                     </v-col>
 
                 </v-row>
@@ -1260,7 +1283,7 @@ export default {
                 Thanks For All The Support:
             </h4>
         
-            <v-continer>
+            <v-container>
                 
                 <v-row>
                     <v-col cols="12" sm="4" md="4" lg="4" xl="4">
@@ -1406,7 +1429,7 @@ export default {
                 <div class="text-subtitle-1 ma-5 text-lg-h6 text-md-h6 text-xl-h6">
                     📧 Email <a href="mailto:me@michaelcaplan.com">me@michaelcaplan.com</a> or ☎️ phone <a href="tel:+19027600168">(902) 760-0168</a>
                 </div>
-            </v-continer>
+            </v-container>
         </v-sheet>
         
     </v-main>
