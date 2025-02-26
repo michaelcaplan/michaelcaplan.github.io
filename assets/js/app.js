@@ -1000,7 +1000,7 @@ export default {
                                         
                                             <p class="text-body-1 pb-4">
                                                 Hey friends, family, neighbours, and colleagues!  
-                                                I'm hoping you'll join me on a little adventure for 2025 as I age into a new 5th decade.  
+                                                I'm hoping you'll join me on a little adventure for 2025 as I age into a new 6th decade.  
                                                 Help me turn each year into an opportunity on wheels for local youth.
                                             </p>
                                             
