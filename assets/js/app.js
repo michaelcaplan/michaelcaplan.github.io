@@ -280,8 +280,8 @@ export default {
         
             <div class="d-flex ga-5 flex-1-1-auto flex-wrap justify-center px-4">
                 <stripe-buy-button
-                    buy-button-id="buy_btn_1QvRz4FSy4s51StpxnXxsOhQ"
-                    publishable-key="pk_test_51QrIh0FSy4s51StpeTydo1LoHGB19jHUUGZuiYOjHsp15TAKoWony99B2H8MODUJcpkT0DgRMMPn34GnG6J3IAlc00vIkX2am6"
+                    buy-button-id="buy_btn_1QwVuuFMFN7Psi9lF1HHFv1L"
+                    publishable-key="pk_live_51QrIgqFMFN7Psi9lAiY7GFUuxgsj0tUWdf7oza4ps49nzpHOrOlYwmc4T0nWwrfW0ZGhcPvA7pvePQS8PBeTaIRz00roiUu2Xw"
                 >
                 </stripe-buy-button>
             </div>
@@ -1220,28 +1220,29 @@ export default {
                 <v-row>
                     <v-col cols="12" sm="6" md="6" lg="6" xl="6">
                         <stripe-buy-button
-                            buy-button-id="buy_btn_1QtdQgFSy4s51StpVteLHdqS"
-                            publishable-key="pk_test_51QrIh0FSy4s51StpeTydo1LoHGB19jHUUGZuiYOjHsp15TAKoWony99B2H8MODUJcpkT0DgRMMPn34GnG6J3IAlc00vIkX2am6"
-                        ></stripe-buy-button>
-                    </v-col>
-                    <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-                        <stripe-buy-button
-                          buy-button-id="buy_btn_1Qrj9NFSy4s51StpTW5GBs5j"
-                          publishable-key="pk_test_51QrIh0FSy4s51StpeTydo1LoHGB19jHUUGZuiYOjHsp15TAKoWony99B2H8MODUJcpkT0DgRMMPn34GnG6J3IAlc00vIkX2am6"
+                            buy-button-id="buy_btn_1QwVzAFMFN7Psi9lzi7jYqx3"
+                            publishable-key="pk_live_51QrIgqFMFN7Psi9lAiY7GFUuxgsj0tUWdf7oza4ps49nzpHOrOlYwmc4T0nWwrfW0ZGhcPvA7pvePQS8PBeTaIRz00roiUu2Xw"
                         >
                         </stripe-buy-button>
                     </v-col>
                     <v-col cols="12" sm="6" md="6" lg="6" xl="6">
                         <stripe-buy-button
-                            buy-button-id="buy_btn_1QvMzyFSy4s51StprjYn1h3K"
-                            publishable-key="pk_test_51QrIh0FSy4s51StpeTydo1LoHGB19jHUUGZuiYOjHsp15TAKoWony99B2H8MODUJcpkT0DgRMMPn34GnG6J3IAlc00vIkX2am6"
+                            buy-button-id="buy_btn_1QwZuKFMFN7Psi9ls8nWvBp4"
+                            publishable-key="pk_live_51QrIgqFMFN7Psi9lAiY7GFUuxgsj0tUWdf7oza4ps49nzpHOrOlYwmc4T0nWwrfW0ZGhcPvA7pvePQS8PBeTaIRz00roiUu2Xw"
                         >
                         </stripe-buy-button>
                     </v-col>
                     <v-col cols="12" sm="6" md="6" lg="6" xl="6">
-                         <stripe-buy-button
-                            buy-button-id="buy_btn_1QvNaoFSy4s51Stp7iSy6ELs"
-                            publishable-key="pk_test_51QrIh0FSy4s51StpeTydo1LoHGB19jHUUGZuiYOjHsp15TAKoWony99B2H8MODUJcpkT0DgRMMPn34GnG6J3IAlc00vIkX2am6"
+                        <stripe-buy-button
+                            buy-button-id="buy_btn_1Qwa0aFMFN7Psi9lCYQr0axc"
+                            publishable-key="pk_live_51QrIgqFMFN7Psi9lAiY7GFUuxgsj0tUWdf7oza4ps49nzpHOrOlYwmc4T0nWwrfW0ZGhcPvA7pvePQS8PBeTaIRz00roiUu2Xw"
+                        >
+                        </stripe-buy-button>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                        <stripe-buy-button
+                            buy-button-id="buy_btn_1Qwa46FMFN7Psi9la3YpmgbO"
+                            publishable-key="pk_live_51QrIgqFMFN7Psi9lAiY7GFUuxgsj0tUWdf7oza4ps49nzpHOrOlYwmc4T0nWwrfW0ZGhcPvA7pvePQS8PBeTaIRz00roiUu2Xw"
                         >
                         </stripe-buy-button>
                     </v-col>
