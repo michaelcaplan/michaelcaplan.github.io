@@ -127,7 +127,20 @@ export default {
         appwrite.subscribe(
             'databases.67acfa8f001b82489d37.collections.67acfaaf000e9833c9e6.documents',
             response => {
-                this.donors.push(response.payload);
+
+                let docs = databases.listDocuments(
+                    "67acfa8f001b82489d37",
+                    "67acfaaf000e9833c9e6",
+                    [
+                        Query.limit(300)
+                    ]
+                );
+
+                docs.then((data) => {
+                    this.donors = data.documents;
+                }, (error) => {
+                    console.log(error);
+                });
             }
         );
 
