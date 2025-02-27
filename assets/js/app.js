@@ -1,4 +1,4 @@
-import {Client, Databases, ID} from "appwrite";
+import {Client, Databases, Query} from "appwrite";
 
 const appwrite = new Client()
     .setEndpoint("https://cloud.appwrite.io/v1")
@@ -135,7 +135,10 @@ export default {
 
         let data = await databases.listDocuments(
             "67acfa8f001b82489d37",
-            "67acfaaf000e9833c9e6"
+            "67acfaaf000e9833c9e6",
+            [
+                Query.limit(300)
+            ]
         );
 
         this.donors = data.documents;
