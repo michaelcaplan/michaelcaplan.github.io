@@ -1,7 +1,7 @@
 import { createApp, ref, computed } from "vue"
 import { createVuetify } from "vuetify"
 // import { aliases, mdi } from 'vuetify/iconsets/mdi'
-import App from "/assets/js/app.js?1";
+import App from "/assets/js/app.js?2";
 
 const customDarkTheme = {
     dark: true,

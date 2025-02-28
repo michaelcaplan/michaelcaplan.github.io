@@ -2,6 +2,10 @@ abbr {
     text-decoration-line: grammar-error;
 }
 
+body {
+    background-color: #6f42c1;
+}
+
 iframe.youtube {
     aspect-ratio: 16 / 9;
     width: 100% !important;
