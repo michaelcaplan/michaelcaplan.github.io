@@ -15,6 +15,33 @@ export default {
             tidal: false,
             kaneisthekey: false,
             donors: [],
+            news: [
+
+                { type: 'subheader', title: 'March 7' },
+
+                {
+                    title: '50 Skateboards On The Way',
+                    subtitle: '<span class="text-secondary">iGotSkate</span> ordered our 50 skateboards.',
+                },
+
+                { type: 'subheader', title: 'March 3' },
+
+                {
+                    title: '5K Hit!',
+                    subtitle: '<span class="text-secondary">Milestone Hit!</span> $5K raised! Now working on our last fundraising goal of $10K.',
+                },
+
+                { type: 'subheader', title: 'February 26' },
+                {
+                    title: 'Read All About Us',
+                    subtitle: '<span class="text-secondary">Kirk Starratt</span> of Saltwire <a target="_blank" href="https://www.saltwire.com/nova-scotia/annapolis-valley/annapolis-valley-n-s-skateboard-fundraiser-breaking-down-barriers-for-youth">covered our fundraiser</a>.',
+                },
+                { type: 'divider', inset: true },
+                {
+                    title: '50/50 Launched',
+                    subtitle: '<span class="text-secondary">We are live!</span> 50/50 Skateboarding For The Youth pushes off it\'s fundraising campaign.',
+                },
+            ]
         }
     },
 
@@ -472,18 +499,49 @@ export default {
                     
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
                            
-                           Our goal is to raise $5K to so we can donate the following package to 50 youth (10 per partner organization):
+                           Our goal is to raise $5K to so we can donate the following package to 50 youth (10 per partner organization).
+                           
+                           Stretch goal is $10K so we can also include free protective gear to give to the 50 new skaters.
 
                             <v-list>
                                 <v-list-item>⭐ 2 intro skateboarding lessons</v-list-item>
                                 <v-list-item>⭐ Free skateboard.  This is the exclusive cost we are fundraising for - $100 for 1 skateboard provided by our pals at IGot Skate.</v-list-item>
-                                <v-list-item>⭐ Protective gear rental (free - thanks Town of Kentville!)</v-list-item>
+                                <v-list-item>⭐ Protective gear (Short term rentals care of Town of Kentville, $100 for 1 set of pads for one skater)</v-list-item>
                                 <v-list-item>⭐ An open invite to join us for our regular skate meetups!</v-list-item>
                             </v-list>
-                            
-                            Stretch goal is $10K so we can also include free pads to give to the 50 new skaters.
                            
                         </div>
+                    </v-col>
+                </v-row>
+            </v-container>
+            
+            <div class="text-h4 font-weight-bold text-center">
+                Some Updates
+            </div>
+            
+            <v-container>
+                <v-row>
+                    <v-col
+                        class="d-flex flex-column align-center"
+                        cols="12"
+                    >
+            
+                        <v-list
+                          :items="news"
+                          lines="three"
+                          item-props
+                        >
+                            <template v-slot:prepend="{ prepend }">
+                                <v-avatar
+                                    color="primary"
+                                    icon="mdi-skateboarding"
+                                >
+                                </v-avatar>
+                            </template>
+                            <template v-slot:subtitle="{ subtitle }">
+                                <div v-html="subtitle"></div>
+                            </template>
+                        </v-list>
                     </v-col>
                 </v-row>
             </v-container>
