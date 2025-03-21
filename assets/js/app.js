@@ -16,6 +16,12 @@ export default {
             kaneisthekey: false,
             donors: [],
             news: [
+                { type: 'subheader', title: 'March 21' },
+
+                {
+                    title: '50 Skateboards at iGotSkate',
+                    subtitle: '<span class="text-secondary">iGotSkate</span> <a href="https://www.youtube.com/shorts/4jAkGL4o58M">delivery of our 50 skateboards</a>.',
+                },
 
                 { type: 'subheader', title: 'March 7' },
 
