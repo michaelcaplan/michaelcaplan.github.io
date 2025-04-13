@@ -14,6 +14,7 @@ export default {
             girlsonboards: false,
             tidal: false,
             kaneisthekey: false,
+            valleybusinesshub: false,
             donors: [],
             news: [
                 { type: 'subheader', title: 'March 21' },
@@ -610,7 +611,7 @@ export default {
                             </v-card-text>
                             <v-card-actions>
                                 <v-btn
-                                    href="https://ymcahfx.ca/yreach/"
+                                    href="https://www.portalyouth.ca/"
                                     target="_blank"
                                     variant="tonal"
                                     block
@@ -1202,13 +1203,114 @@ export default {
                                                 flat
                                                 color="primary"
                                                 text="Let's Go!"
-                                                @click="caplan = false"
+                                                @click="kaneisthekey = false"
                                             ></v-btn>
                                         </template>
                                     </v-card>
                                 </v-dialog>
                             </v-col>
                             
+                        </v-row>
+                        
+                        <v-row>
+                            <v-col cols="12" sm="6" md="6" lg="6" xl="6">
+                                <v-card
+                                    variant="outlined"
+                                >
+                                    <v-card-title>
+                                        The Valley Business Hub
+                                        <v-btn 
+                                            href="https://annapolisvalleychamber.ca/rental/"
+                                            target="_blank"
+                                            icon="mdi-open-in-new"
+                                            size="small"
+                                            density="comfortable"></v-btn>
+                                    </v-card-title>
+                                
+                                    <v-card-text>
+                                        The Valley Business Hub in Kentville is a go-to space for business support and economic development. 
+                                    </v-card-text>
+                                    <v-card-actions>
+                                        <v-btn
+                                            variant="tonal"
+                                            @click="valleybusinesshub = true"
+                                            block
+                                        >
+                                            <v-icon class="pr-4" icon="mdi-open-in-app"></v-icon>
+                                            More...
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                                
+                                <v-dialog
+                                    v-model="valleybusinesshub"
+                                    scrollable
+                                    transition="dialog-bottom-transition"
+                                    fullscreen
+                                    width="100%"
+                                >
+                                    <v-card>
+                                        <v-toolbar>
+                                            <v-toolbar-title>The Valley Business Hub</v-toolbar-title>
+                                
+                                            <v-spacer></v-spacer>
+                                
+                                            <v-toolbar-items>
+                                                <v-btn
+                                                    icon="mdi-close"
+                                                    @click="valleybusinesshub = false"
+                                                ></v-btn>
+                                            </v-toolbar-items>
+                                        </v-toolbar>
+                                    
+                                        <v-card-text>
+
+                                            <h3 class="pb-4">Back "50/50: Skateboarding For The Youth" on behalf of The Valley Business Hub</h3>
+                                        
+                                            <div class="d-flex justify-center pb-4">
+                                                    <v-img
+                                                        src="/assets/images/valleybusinesshub.jpg"
+                                                        aspect-ratio="1/1"
+                                                        max-width="300"
+                                                        position="50% 50%"
+                                                        rounded="lg"
+                                                    ></v-img>
+                                            </div>
+                                        
+                                            <p class="text-body-1 pb-4">
+                                                The Valley Business Hub in Kentville is a go-to space for business support and economic development. 
+                                                It’s home to CBDC Hants-Kings, Valley REN, and the Annapolis Valley Chamber of Commerce, three organizations dedicated to helping businesses thrive. 
+                                                Whether it’s funding, mentorship, networking, or strategic resources, the hub connects entrepreneurs with the tools they need to grow. 
+                                                By bringing people together and fostering collaboration, it plays a key role in supporting local businesses.
+                                            </p>
+                                            
+                                            <div class="d-flex justify-center pb-4">
+                                                <v-btn
+                                                    color="secondary"
+                                                    href="#home"
+                                                    @click="valleybusinesshub = false"
+                                                    size="x-large"
+                                                    rounded="xl"
+                                                    prepend-icon="mdi-skateboarding" 
+                                                >
+                                                    Learn about 50/50
+                                                </v-btn>
+                                            </div>
+                                            
+                                        
+                                        </v-card-text>
+                                    
+                                        <template v-slot:actions>
+                                            <v-btn
+                                                flat
+                                                color="primary"
+                                                text="Let's Go!"
+                                                @click="valleybusinesshub = false"
+                                            ></v-btn>
+                                        </template>
+                                    </v-card>
+                                </v-dialog>
+                            </v-col>                        
                         </v-row>
                         
                         <v-dialog
@@ -1493,6 +1595,28 @@ export default {
                                 href="https://www.kaneisthekey.ca"
                                 target="_blank">
                                 Kane Smith - Exit Realty
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
+                    
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/valleybusinesshub.jpg"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://annapolisvalleychamber.ca/rental/"
+                                target="_blank">
+                                The Valley Business Hub
                                 <v-icon>mdi-open-in-new</v-icon>
                             </a>
                         </div>
