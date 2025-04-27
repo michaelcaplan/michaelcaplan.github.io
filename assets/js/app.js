@@ -17,6 +17,13 @@ export default {
             valleybusinesshub: false,
             donors: [],
             news: [
+                { type: 'subheader', title: 'April 17' },
+
+                {
+                    title: 'CBC Information Morning',
+                    subtitle: '<span class="text-secondary">Laura Churchill Duke</span> <a href="https://youtu.be/3ePyFujq7xM">spoke to Information Morning</a> about our project.',
+                },
+
                 { type: 'subheader', title: 'March 21' },
 
                 {
