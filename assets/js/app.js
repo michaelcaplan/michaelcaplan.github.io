@@ -17,6 +17,13 @@ export default {
             valleybusinesshub: false,
             donors: [],
             news: [
+                { type: 'subheader', title: 'April 26' },
+
+                {
+                    title: '7.5K Hit!',
+                    subtitle: '<span class="text-secondary">Milestone Hit!</span> 3/4 of our total 10K goal raised!',
+                },
+
                 { type: 'subheader', title: 'April 17' },
 
                 {
