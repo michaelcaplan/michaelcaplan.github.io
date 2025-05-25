@@ -1,6 +1,6 @@
 import { createApp, ref, computed } from "vue"
 import { createVuetify } from "vuetify"
-import App from "/assets/js/app.js?8";
+import App from "/assets/js/app.js?9";
 
 const customDarkTheme = {
     dark: true,
