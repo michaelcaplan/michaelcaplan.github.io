@@ -17,6 +17,18 @@ export default {
             valleybusinesshub: false,
             donors: [],
             news: [
+                { type: 'subheader', title: 'May 14' },
+
+                {
+                    title: '10K Hit!',
+                    subtitle: '<span class="text-secondary">Milestone Hit!</span> 100% of our total 10K goal raised!  Now we push to fund 80 kids!',
+                },
+
+                {
+                    title: 'Project Update from World Skateboarding Headquarters: iGotSkate',
+                    subtitle: '<span class="text-secondary">iGotSkate</span> <a href="https://youtube.com/shorts/CCV-o-ajdis">project update</a>.',
+                },
+                
                 { type: 'subheader', title: 'April 26' },
 
                 {
@@ -77,7 +89,9 @@ export default {
 
             if (percent > 0) {
 
-                if (percent > 5000) {
+                if (percent > 10000) {
+                    return Math.floor((percent / 16000) * 100); 
+                } else if (percent > 5000) {
                     return Math.floor((percent / 10000) * 100);
                 } else {
                     return Math.floor((percent / 5000) * 100);
@@ -86,6 +100,15 @@ export default {
             }
 
             return 0;
+        },
+
+        funded() {
+            let total = 0;
+            for (let i = 0; i < this.donors.length; i++) {
+                total += this.donors[i].total / 100;
+            }
+
+            return (total / 200).toFixed(1);
         },
 
         total() {
@@ -108,6 +131,10 @@ export default {
 
             if (total >= 5000) {
                 goal = 10000;
+            }
+
+            if (total >= 10000) {
+                goal = 16000;
             }
 
             return '$' + goal;
@@ -347,7 +374,7 @@ export default {
                     <v-tooltip
                         activator="parent"
                         location="top"
-                    >50/50 as in 50 skateboards, for 50 youth.  And 50/50, the name of a skateboarding trick.</v-tooltip>
+                    >50/50 as in 50 skateboards, for 50 youth (we now aim for 80!).  And 50/50, the name of a skateboarding trick.</v-tooltip>
                     
                 </abbr>
                 <br>
@@ -359,6 +386,10 @@ export default {
                 <em>Our goal is simple:</em> offer free skateboarding 🛹 programming to youth 🧑‍🤝‍🧑 facing adversities in Kings County.  Giving them a push in the right direction 💪.
             </div>
         
+            <v-card title="🛹 Youth Funded" variant="tonal" class="mb-5">
+                <h1>{{ funded }} / 80</h1>
+            </v-card>
+
             <div class="d-flex ga-5 flex-1-1-auto flex-wrap justify-center px-4">
                 <stripe-buy-button
                     buy-button-id="buy_btn_1QwVuuFMFN7Psi9lF1HHFv1L"
@@ -376,7 +407,7 @@ export default {
                     <v-tooltip
                         activator="parent"
                         location="top"
-                    >50/50 as in 50 skateboards, for 50 youth.  And 50/50, the name of a skateboarding trick.</v-tooltip>
+                    >50/50 as in 50 skateboards, for 50 youth (we now aim for 80!).  And 50/50, the name of a skateboarding trick.</v-tooltip>
                 </abbr>
             </div>
             
@@ -470,7 +501,7 @@ export default {
                     
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
                             The youth that we are targeting with this project cannot necessarily afford to outfit themselves with gear.
-                            We want to <strong>blast this barrier away</strong> by raising enough cash to give away 50 skateboards as part of our learn to skate programming.
+                            We want to <strong>blast this barrier away</strong> by raising enough cash to give away <strike>50</strike> 80 skateboards and protective gear as part of our learn to skate programming.
                         </div>
                     </v-col>
                 </v-row>
@@ -515,19 +546,20 @@ export default {
                             size="x-large"></v-icon>
                     
                         <div class="text-h6 mt-1">
-                            50 Skateboards for 50 participants
+                            <strike>50 Skateboards for 50 participants</strike> <br />
+                            80 Skateboards for 80 participants
                         </div>
                     
                         <div class="text-body-1 mt-2 text-medium-emphasis w-75">
                            
-                           Our goal is to raise $5K to so we can donate the following package to 50 youth (10 per partner organization).
+                           Our original goal was to raise $10K to so we can donate the following package to 50 youth (10 per partner organization).
                            
-                           Stretch goal is $10K so we can also include free protective gear to give to the 50 new skaters.
+                           We hit that and are now pushing for 16K so we can service 80 new skaters.  While 50 was and is awesome, 80 will allow us to service all the youth from each organization.
 
                             <v-list>
                                 <v-list-item>⭐ 2 intro skateboarding lessons</v-list-item>
-                                <v-list-item>⭐ Free skateboard.  This is the exclusive cost we are fundraising for - $100 for 1 skateboard provided by our pals at IGot Skate.</v-list-item>
-                                <v-list-item>⭐ Protective gear (Short term rentals care of Town of Kentville, $100 for 1 set of pads for one skater)</v-list-item>
+                                <v-list-item>⭐ Free skateboard.  $100 for 1 skateboard provided by our pals at IGot Skate.</v-list-item>
+                                <v-list-item>⭐ Free protective gear. $100 for 1 set of pads and helmet for one skater</v-list-item>
                                 <v-list-item>⭐ An open invite to join us for our regular skate meetups!</v-list-item>
                             </v-list>
                            
@@ -582,13 +614,13 @@ export default {
                     <v-tooltip
                         activator="parent"
                         location="top"
-                    >50/50 as in 50 skateboards, for 50 youth.  And 50/50, the name of a skateboarding trick.</v-tooltip>
+                    >50/50 as in 50 skateboards, for 50 youth (now 80!).  And 50/50, the name of a skateboarding trick.</v-tooltip>
                 </abbr>
             </div>
         
             <div class="text-body-1 font-weight-regular ma-3 text-medium-emphasis mb-12">
                 These organizations do great things supporting youth who face a wide range of challenges.  
-                Each group will get 10 skate packages for 10 of their constituents.
+                Each group will get a minimum of 10 skate packages for 10 of their constituents.
             </div>
             
             <v-container>
