@@ -1735,6 +1735,28 @@ export default {
                         </div>
                     </v-col>
                     
+
+                    <v-col cols="12" sm="4" md="4" lg="4" xl="4">
+                        
+                        <div class="d-flex justify-center pb-4">
+                            <v-img
+                                src="/assets/images/c4k.png"
+                                aspect-ratio="1/1"
+                                max-width="300"
+                                rounded="lg"
+                            ></v-img>
+                        </div>
+                        
+                        <div class="text-subtitle-1">
+                            <a 
+                                class="text-h6"
+                                href="https://campaignforkids.com/"
+                                target="_blank">
+                                Campaign for Kids
+                                <v-icon>mdi-open-in-new</v-icon>
+                            </a>
+                        </div>
+                    </v-col>
                 </v-row>
                 
                 <v-divider class="mt-4 mb-3"></v-divider>
