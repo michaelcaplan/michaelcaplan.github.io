@@ -1740,7 +1740,7 @@ export default {
                         
                         <div class="d-flex justify-center pb-4">
                             <v-img
-                                src="/assets/images/c4k.png"
+                                src="/assets/images/c4k.jpg"
                                 aspect-ratio="1/1"
                                 max-width="300"
                                 rounded="lg"
